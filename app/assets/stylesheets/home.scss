@@ -1,3 +1,41 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.content-image{
+  height: 520px;
+  width: 100%;
+  background-image: url(https://pixabay.com/get/54e5d3414f54af14f6d1867dda6d49214b6ac3e4565776497d2c7ed590/sea-2562563_1920.jpg);
+}
+
+.content-middle{
+  padding: 30px;
+}
+
+.content-left{
+  float: left;
+  padding: 15px;
+  height: 800px;
+  width: 750px;
+  border-right: 2px solid #b3aeb5;
+}
+
+.content-right{
+  float: left;
+  padding: 15px;
+  height: 800px;
+}
+
+.menu{
+  position: fixed;
+  top: 450px;
+  padding-left: 10px;
+}
+
+li{
+  list-style: none;
+  float: left;
+  font-size: 25px;
+  padding: 20px 35px;
+  color: #ffffff;
+  font-family: cursive;
+}
