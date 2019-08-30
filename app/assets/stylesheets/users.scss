@@ -1,0 +1,26 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.information{
+  height: 460px;
+  width: 100%;
+}
+
+.information img{
+  padding-left: 300px;
+  padding-top: 100px;
+  height: 200px;
+  width: 200px;
+  float: left;
+}
+
+.name_email{
+  padding: 120px 50px;
+  float: left;
+}
+
+.information li{
+  padding: 20px;
+  list-style: none;
+  font-size: 20px;
+}

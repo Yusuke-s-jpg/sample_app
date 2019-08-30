@@ -1,0 +1,12 @@
+<div class="new-post">
+  <%= form_tag("/posts/create") do %>
+    <div class="new-post-form">
+      <p>title</p>
+      <input name="title">
+      <p>content</p>
+      <input name="content">
+      <p>post</p>
+      <input type="submit" value="submit">
+    </div>
+  <% end %>
+</div>

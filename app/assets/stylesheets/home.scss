@@ -4,7 +4,26 @@
 .content-image{
   height: 520px;
   width: 100%;
-  background-image: url(https://pixabay.com/get/54e5d3414f54af14f6d1867dda6d49214b6ac3e4565776497d2c7ed590/sea-2562563_1920.jpg);
+  background-image: url("/home_image/home.jpg");
+}
+
+.menu{
+  position: absolute;
+  top: 450px;
+  padding-left: 10px;
+}
+
+.menu li{
+  list-style: none;
+  float: left;
+  font-size: 25px;
+  padding: 20px 35px;
+  font-family: cursive;
+}
+
+.link{
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .content-middle{
@@ -16,7 +35,7 @@
   padding: 15px;
   height: 800px;
   width: 750px;
-  border-right: 2px solid #b3aeb5;
+  border-right: 3px solid #b3aeb5;
 }
 
 .content-right{
@@ -25,17 +44,8 @@
   height: 800px;
 }
 
-.menu{
-  position: fixed;
-  top: 450px;
-  padding-left: 10px;
-}
-
-li{
-  list-style: none;
-  float: left;
-  font-size: 25px;
-  padding: 20px 35px;
-  color: #ffffff;
-  font-family: cursive;
+.index-form{
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 3px 8px #c1ced7;
 }

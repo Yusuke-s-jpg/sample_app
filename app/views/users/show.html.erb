@@ -1,0 +1,14 @@
+<div class="information">
+  <img src="<%= "/user_images/#{@user.image_name}.jpg" %>">
+  <div class="name_email">
+    <ul>
+      <li><%= @user.name %></li>
+      <li><%= @user.email %></li>
+    </ul>
+  </div>
+</div>
+<div class="post-area">
+  <div class="post-new-access">
+    <%= link_to("New Post", "/posts/new") %>
+  </div>
+</div>

@@ -2,16 +2,29 @@
   <div class="content-image">
     <div class="menu">
       <ul>
-        <li>Blogger</li>
-        <li>Search</li>
-        <li>My Page</li>
-        <li>Sign Up</li>
+        <% if session[:user_id] %>
+          <li><%= session[:user_id] %></li>
+          <li>Blogger</li>
+          <li>Search</li>
+          <li><%= link_to("My Page", "/users/1", {class: "link"}) %></li>
+          <li><%= link_to("Log Out", "/logout", {method: "post", class: "link"}) %></li>
+        <% else %>
+          <li>Blogger</li>
+          <li>Search</li>
+          <li><%= link_to("Log In", "/login", {class: "link"}) %></li>
+          <li><%= link_to("Sign Up", "/users/new", {class: "link"}) %></li>
+        <% end %>
       </ul>
     </div>
   </div>
   <div class="content-middle">
     <div class="content-left">
       <h1>New Posts</h1>
+      <% @posts.each do |post| %>
+        <div class="index-form">
+          <%= post.title %>
+        </div>
+      <% end %>
     </div>
     <div class="content-right">
     </div>
