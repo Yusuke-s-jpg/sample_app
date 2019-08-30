@@ -1,6 +1,8 @@
-<div class="new-post">
-  <%= form_tag("/posts/create") do %>
+<div class="new-post-space">
+  <%= form_tag("/posts/create", {multipart: true}) do %>
     <div class="new-post-form">
+      <p>photo</p>
+      <input name="photo" type="file">
       <p>title</p>
       <input name="title">
       <p>content</p>

@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
+    @posts = Post.where(user_id: @user.id)
   end
 
   def new
@@ -10,7 +11,8 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:name],
       email: params[:email],
-      password: params[:password]
+      password: params[:password],
+      image_name: "defoult_image.jpg"
     )
     if @user.save
     session[:user_id] = @user.id

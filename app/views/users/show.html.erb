@@ -1,5 +1,5 @@
 <div class="information">
-  <img src="<%= "/user_images/#{@user.image_name}.jpg" %>">
+  <img src="<%= "/user_images/#{@user.image_name}" %>">
   <div class="name_email">
     <ul>
       <li><%= @user.name %></li>
@@ -10,5 +10,18 @@
 <div class="post-area">
   <div class="post-new-access">
     <%= link_to("New Post", "/posts/new") %>
+  </div>
+  <div class="user-post">
+    <% if @posts %>
+      <% @posts.each do |post| %>
+        <div class="user-post-content">
+         <%= post.title %>
+        </div>
+      <% end %>
+    <% elsif @posts == nil %>
+      <div class="no-post-case">
+        <h1>There is not any post yet</h1>
+      </div>
+    <% end %>
   </div>
 </div>

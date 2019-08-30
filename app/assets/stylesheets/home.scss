@@ -34,7 +34,7 @@
   float: left;
   padding: 15px;
   height: 800px;
-  width: 750px;
+  width: 900px;
   border-right: 3px solid #b3aeb5;
 }
 
@@ -44,8 +44,22 @@
   height: 800px;
 }
 
-.index-form{
-  padding: 20px;
-  background-color: #ffffff;
+.new-post-form{
+  height: 150px;
+  width: 850px;
   box-shadow: 0 3px 8px #c1ced7;
+  padding: 15px;
+}
+
+.index-left img{
+  float: left;
+  height: 150px;
+  width: 200px;
+  padding: 5px;
+}
+
+.index-right{
+  float: left;
+  padding: 10px;
+  background-color: #ffffff;
 }

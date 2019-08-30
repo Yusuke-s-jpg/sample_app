@@ -6,7 +6,7 @@
           <li><%= session[:user_id] %></li>
           <li>Blogger</li>
           <li>Search</li>
-          <li><%= link_to("My Page", "/users/1", {class: "link"}) %></li>
+          <li><%= link_to("My Page", "/users/#{session[:user_id]}", {class: "link"}) %></li>
           <li><%= link_to("Log Out", "/logout", {method: "post", class: "link"}) %></li>
         <% else %>
           <li>Blogger</li>
@@ -21,8 +21,13 @@
     <div class="content-left">
       <h1>New Posts</h1>
       <% @posts.each do |post| %>
-        <div class="index-form">
-          <%= post.title %>
+        <div class="new-post-form">
+          <div class="index-left">
+            <img src="<%= "/post_photo/#{post.id}.jpg" %>">
+          </div>
+          <div class="index-right">
+            <%= post.title %>
+          </div>
         </div>
       <% end %>
     </div>
