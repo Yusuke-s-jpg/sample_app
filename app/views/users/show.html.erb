@@ -1,4 +1,5 @@
-<div class="information">
+<div class="background-a">
+  <div class="information-upper">
   <img src="<%= "/user_images/#{@user.image_name}" %>">
   <div class="name_email">
     <ul>
@@ -7,21 +8,20 @@
     </ul>
   </div>
 </div>
-<div class="post-area">
-  <div class="post-new-access">
-    <%= link_to("New Post", "/posts/new") %>
-  </div>
-  <div class="user-post">
-    <% if @posts %>
-      <% @posts.each do |post| %>
-        <div class="user-post-content">
-         <%= post.title %>
-        </div>
-      <% end %>
-    <% elsif @posts == nil %>
-      <div class="no-post-case">
-        <h1>There is not any post yet</h1>
+<%= link_to("New Post", "/posts/new", {class: "new-post-btn"}) %>
+<div class="user-post">
+  <% @posts.each do |post| %>
+      <div class="mypage-index-left">
+        <img src="<%= "/post_photo/#{post.id}.jpg" %>">
       </div>
-    <% end %>
-  </div>
+      <div class="mypage-index-right">
+        <div class="mypage-upper">
+          <h1><%= post.title %></h1>
+          <p><%= post.content %></p>
+        </div>
+        <div class="mypage-lower">
+          <%= post.created_at %>
+        </div>
+      </div>
+  <% end %>
 </div>

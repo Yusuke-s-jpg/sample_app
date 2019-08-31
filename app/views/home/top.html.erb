@@ -1,21 +1,5 @@
 <div class="content">
   <div class="content-image">
-    <div class="menu">
-      <ul>
-        <% if session[:user_id] %>
-          <li><%= session[:user_id] %></li>
-          <li>Blogger</li>
-          <li>Search</li>
-          <li><%= link_to("My Page", "/users/#{session[:user_id]}", {class: "link"}) %></li>
-          <li><%= link_to("Log Out", "/logout", {method: "post", class: "link"}) %></li>
-        <% else %>
-          <li>Blogger</li>
-          <li>Search</li>
-          <li><%= link_to("Log In", "/login", {class: "link"}) %></li>
-          <li><%= link_to("Sign Up", "/users/new", {class: "link"}) %></li>
-        <% end %>
-      </ul>
-    </div>
   </div>
   <div class="content-middle">
     <div class="content-left">
@@ -26,7 +10,14 @@
             <img src="<%= "/post_photo/#{post.id}.jpg" %>">
           </div>
           <div class="index-right">
-            <%= post.title %>
+            <div class="index-right-top">
+              <%= link_to(post.title, "/posts/#{post.id}", {class: "index-post-title"}) %>
+            </div>
+            <div class="index-right-bottom">
+              <img src="<%= "/user_images/#{post.user.image_name}" %>">
+              <span><%= post.user.name %></span>
+              <p><%= post.created_at %></p>
+            </div>
           </div>
         </div>
       <% end %>

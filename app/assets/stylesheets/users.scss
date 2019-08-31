@@ -1,26 +1,126 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.information{
-  height: 460px;
+.background{
+  height: 100%;
   width: 100%;
+  background-color: #eeeeee;
 }
 
-.information img{
-  padding-left: 300px;
-  padding-top: 100px;
+.background-a{
+  height: 2000px;
+  width: 100%;
+  background-color: #eeeeee;
+}
+
+.information-upper{
+  position: absolute;
+  top: 120px;
+  left: 450px;
+  height: 240px;
+  width: 550px;
+  box-shadow: 0 3px 8px #c1ced7;
+  background-color: #ffffff
+}
+
+.information-upper img{
+  padding: 20px;
   height: 200px;
   width: 200px;
   float: left;
 }
 
 .name_email{
-  padding: 120px 50px;
+  padding-top: 30px;
   float: left;
 }
 
-.information li{
+.information-upper li{
   padding: 20px;
   list-style: none;
   font-size: 20px;
+}
+
+.new-post-btn{
+  position: absolute;
+  top: 420px;
+  left: 550px;
+  width: 320px;
+  text-align: center;
+  font-size: 25px;
+  text-decoration: none;
+  padding: 15px;
+  color: #ffffff;
+  background-color: #3366ff
+}
+
+.mypage-index-left img{
+  height: 210px;
+  width: 300px;
+  padding: 20px;
+  float: left;
+}
+
+.mypage-index-right{
+  float: left;
+  height: 205px;
+  width: 500px;
+  margin: 20px;
+}
+
+.mypage-upper{
+  height: 170px;
+  width: 100%;
+}
+
+.user-post{
+  position: absolute;
+  top: 550px;
+  left: 300px;
+  height: 250px;
+  width: 900px;
+  background-color: #ffffff;
+}
+
+.submit-form{
+  position: absolute;
+  top: 200px;
+  left: 580px;
+  width: 300px;
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 3px 8px #c1ced7;
+}
+
+.submit-form input{
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  font-family: 'Open Sans', sans-serif;
+  height: 50px;
+}
+
+.submit-form input:focus{
+  border-bottom: 2px solid #c0c0c0;
+  outline: none;
+}
+
+.submit-btn{
+  margin-top: 20px;
+  width: 100%;
+}
+
+.submit-btn:hover{
+  cursor: pointer;
+  background: #C0C0C0;
+  transition: background 0.3s ease-in-out;
+}
+
+.create-account{
+  text-decoration: none;
+  color: #000000;
+  font-size: 15px;
+  padding-top: 20px;
 }

@@ -1,13 +1,13 @@
-<div class="user-new">
+<div class="background">
+<div class="submit-form">
   <%= form_tag("/users/create") do %>
     <div class="create-form">
-      <p>name</p>
-      <input name="name">
-      <p>email</p>
-      <input name="email">
-      <p>password</p>
-      <input name="password">
-      <input type="submit">
+      <h1>Sign Up</h1>
+      <input name="name" placeholder="Name">
+      <br/><input name="email" placeholder="Email">
+      <br/><input name="password" placeholder="Password">
+      <br/><input type="submit" value="SIGN UP" class="submit-btn">
     </div>
   <% end %>
+</div>
 </div>

@@ -7,25 +7,6 @@
   background-image: url("/home_image/home.jpg");
 }
 
-.menu{
-  position: absolute;
-  top: 450px;
-  padding-left: 10px;
-}
-
-.menu li{
-  list-style: none;
-  float: left;
-  font-size: 25px;
-  padding: 20px 35px;
-  font-family: cursive;
-}
-
-.link{
-  text-decoration: none;
-  color: #ffffff;
-}
-
 .content-middle{
   padding: 30px;
 }
@@ -35,7 +16,7 @@
   padding: 15px;
   height: 800px;
   width: 900px;
-  border-right: 3px solid #b3aeb5;
+  border-right: 3px solid #dddddd;
 }
 
 .content-right{
@@ -58,8 +39,36 @@
   padding: 5px;
 }
 
+.index-post-title{
+ text-decoration: none;
+ font-size: 30px;
+ color: black;
+}
+
 .index-right{
   float: left;
   padding: 10px;
   background-color: #ffffff;
 }
+
+.index-right-top{
+  padding: 5px;
+  height: 50px;
+  width: 600px;
+}
+
+.index-right-bottom{
+  padding: 5px;
+  height: 50px;
+  width: 600px;
+}
+
+.index-right-bottom img{
+  padding: 0px;
+  height: 40px;
+  width: 35px;
+}
+
+.index-right-bottom span{
+  font-size: 20px;
+  }

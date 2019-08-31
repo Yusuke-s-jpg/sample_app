@@ -14,4 +14,8 @@ class PostsController < ApplicationController
       File.binwrite("public/post_photo/#{@post.photo_name}", image.read)
     redirect_to("/")
   end
+
+  def show
+    @post = Post.find_by(id: params[:id])
+  end
 end

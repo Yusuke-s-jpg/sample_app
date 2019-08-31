@@ -1,0 +1,20 @@
+<div class="post-show">
+  <div class="post-show-image">
+    <div class="post-show-photo">
+      <img src="<%= "/post_photo/#{@post.id}.jpg" %>">
+    </div>
+  </div>
+  <div class="post-show-right">
+    <div class="post-title">
+      <h1><%= @post.title %></h1>
+    </div>
+    <div class="post-content">
+      <p><%= @post.content %></p>
+    </div>
+    <div class="post-show-profile">
+    <img src="<%= "/user_images/#{@post.user.image_name}" %>">
+    <span><%= @post.user.name %></span>
+    <span><%= @post.created_at %></span>
+    </div>
+  </div>
+</div>

@@ -1,16 +1,18 @@
-<div class="login">
+<div class="background">
+  <div class="submit-form">
   <%= form_tag("/login") do %>
-    <div class="login_form">
+      <h1>Log In</h1>
       <% if @error_message %>
         <div class="form-error">
           <%= @error_message %>
         </div>
       <% end %>
-      <p>email</p>
-      <input name="email" value="<%= @email %>">
-      <p>password</p>
-      <input type="password" name="password" value="<%= @password %>">
-      <input type="submit">
-    </div>
+      <input name="email" placeholder="Email"><br/>
+      <input type="password" name="password" placeholder="Password">
+      <br/><input type="submit" value="LOG IN" class="submit-btn">
+      <div class="create-account">
+      <%= link_to("Create an account", "/users/new", {class: "create-account"}) %>
+      </div>
   <% end %>
+  </div>
 </div>

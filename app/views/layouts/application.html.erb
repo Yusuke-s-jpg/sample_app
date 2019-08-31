@@ -10,6 +10,26 @@
   </head>
 
   <body>
+    <header>
+      <div class="menu">
+        <ul>
+            <li><%= link_to("Home", "/", {class: "link"}) %></li>
+          <% if session[:user_id] %>
+            <li><%= session[:user_id] %></li>
+
+            <li>Blogger</li>
+            <li>Search</li>
+            <li><%= link_to("My Page", "/users/#{session[:user_id]}", {class: "link"}) %></li>
+            <li><%= link_to("Log Out", "/logout", {method: "post", class: "link"}) %></li>
+          <% else %>
+            <li>Blogger</li>
+            <li>Search</li>
+            <li><%= link_to("Log In", "/login", {class: "link"}) %></li>
+            <li><%= link_to("Sign Up", "/users/new", {class: "link"}) %></li>
+          <% end %>
+        </ul>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
