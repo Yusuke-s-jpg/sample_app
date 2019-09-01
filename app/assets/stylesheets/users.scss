@@ -8,7 +8,7 @@
 }
 
 .background-a{
-  height: 2000px;
+  height: 1700px;
   width: 100%;
   background-color: #eeeeee;
 }
@@ -41,10 +41,13 @@
   font-size: 20px;
 }
 
-.new-post-btn{
+.new-post{
   position: absolute;
   top: 420px;
   left: 550px;
+}
+
+.btn{
   width: 320px;
   text-align: center;
   font-size: 25px;
@@ -52,6 +55,21 @@
   padding: 15px;
   color: #ffffff;
   background-color: #3366ff
+}
+
+.user-post-index{
+  position: absolute;
+  top: 550px;
+  left: 300px;
+  height: 1000px;
+  width: 900px;
+}
+
+.user-post{
+  height: 250px;
+  width: 900px;
+  box-shadow: 0 3px 8px #c1ced7;
+  background-color: #ffffff;
 }
 
 .mypage-index-left img{
@@ -71,15 +89,6 @@
 .mypage-upper{
   height: 170px;
   width: 100%;
-}
-
-.user-post{
-  position: absolute;
-  top: 550px;
-  left: 300px;
-  height: 250px;
-  width: 900px;
-  background-color: #ffffff;
 }
 
 .submit-form{

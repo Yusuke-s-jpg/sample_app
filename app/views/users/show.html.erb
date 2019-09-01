@@ -8,9 +8,10 @@
     </ul>
   </div>
 </div>
-<%= link_to("New Post", "/posts/new", {class: "new-post-btn"}) %>
-<div class="user-post">
+<%= link_to("New Post", "/posts/new", {class: "new-post btn"}) %>
+<div class="user-post-index">
   <% @posts.each do |post| %>
+    <div class="user-post">
       <div class="mypage-index-left">
         <img src="<%= "/post_photo/#{post.id}.jpg" %>">
       </div>
@@ -21,7 +22,23 @@
         </div>
         <div class="mypage-lower">
           <%= post.created_at %>
+          <span class="like-feture">
+            <%= Like.where(post_id: post.id).count %>
+          <% if session[:user_id] %>
+            <% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
+              <%= link_to("/likes/delete/#{post.id}", {method: "post"}) do %>
+              <span class="fa fa-heart like-btn-unlike"></span>
+              <% end %>
+            <% else %>
+              <%= link_to("/likes/create/#{post.id}", {method: "post"}) do %>
+              <span class="fa fa-heart like-btn"></span>
+              <% end %>
+            <% end %>
+          <% end %>
+          </span>
         </div>
       </div>
+    </div>
   <% end %>
+  <%= paginate @posts %>
 </div>

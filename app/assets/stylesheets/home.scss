@@ -8,7 +8,7 @@
 }
 
 .content-middle{
-  padding: 30px;
+  padding: 10px 30px;
 }
 
 .content-left{
@@ -25,7 +25,7 @@
   height: 800px;
 }
 
-.new-post-form{
+.index-post-form{
   height: 150px;
   width: 850px;
   box-shadow: 0 3px 8px #c1ced7;
@@ -72,3 +72,20 @@
 .index-right-bottom span{
   font-size: 20px;
   }
+
+.link-to-user{
+  text-decoration: none;
+  color: #000000;
+ }
+
+.like-feture{
+  float: right;
+}
+
+.like-btn {
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
+}

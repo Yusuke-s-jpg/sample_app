@@ -6,7 +6,7 @@
       <h1>New Posts</h1>
       <% if @posts %>
       <% @posts.each do |post| %>
-        <div class="new-post-form">
+        <div class="index-post-form">
           <div class="index-left">
             <img src="<%= "/post_photo/#{post.id}.jpg" %>">
           </div>
@@ -16,13 +16,30 @@
             </div>
             <div class="index-right-bottom">
               <img src="<%= "/user_images/#{post.user.image_name}" %>">
-              <span><%= post.user.name %></span>
-              <p><%= post.created_at %></p>
+              <span><%= link_to(post.user.name, "/users/#{post.user.id}", {class:"link-to-user"}) %></span>
+              <p>
+                <%= post.created_at %>
+              <span class="like-feture">
+                <%= Like.where(post_id: post.id).count %>
+              <% if session[:user_id] %>
+                <% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
+                  <%= link_to("/likes/delete/#{post.id}", {method: "post"}) do %>
+                  <span class="fa fa-heart like-btn-unlike"></span>
+                  <% end %>
+                <% else %>
+                  <%= link_to("/likes/create/#{post.id}", {method: "post"}) do %>
+                  <span class="fa fa-heart like-btn"></span>
+                  <% end %>
+                <% end %>
+              <% end %>
+              </span>
+              </p>
             </div>
           </div>
         </div>
       <% end %>
       <% end %>
+      <%= paginate @posts %>
     </div>
     <div class="content-right">
     </div>

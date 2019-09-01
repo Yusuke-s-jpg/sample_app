@@ -14,7 +14,21 @@
     <div class="post-show-profile">
     <img src="<%= "/user_images/#{@post.user.image_name}" %>">
     <span><%= @post.user.name %></span>
-    <span><%= @post.created_at %></span>
+    <span class="show-created_at"><%= @post.created_at %></span>
+    <span class="like-feture show-like-feture">
+      <%= Like.where(post_id: @post.id).count %>
+    <% if session[:user_id] %>
+      <% if Like.find_by(user_id: @current_user.id, post_id: @post.id) %>
+        <%= link_to("/likes/delete/#{@post.id}", {method: "post"}) do %>
+        <span class="fa fa-heart like-btn-unlike"></span>
+        <% end %>
+      <% else %>
+        <%= link_to("/likes/create/#{@post.id}", {method: "post"}) do %>
+        <span class="fa fa-heart like-btn"></span>
+        <% end %>
+      <% end %>
+    <% end %>
+    </span>
     </div>
   </div>
 </div>
