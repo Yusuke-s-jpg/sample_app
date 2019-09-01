@@ -4,6 +4,7 @@
   <div class="content-middle">
     <div class="content-left">
       <h1>New Posts</h1>
+      <% if @posts %>
       <% @posts.each do |post| %>
         <div class="new-post-form">
           <div class="index-left">
@@ -20,6 +21,7 @@
             </div>
           </div>
         </div>
+      <% end %>
       <% end %>
     </div>
     <div class="content-right">
