@@ -11,11 +11,42 @@ class PostsController < ApplicationController
     @post.save
     @post.photo_name = "#{@post.id}.jpg"
     image = params[:photo]
-      File.binwrite("public/post_photo/#{@post.photo_name}", image.read)
+    if image
+      File.binwrite("public/post_photos/#{@post.photo_name}", image.read)
     redirect_to("/")
+    else
+     @error_message = "※"
+     render("posts/edit")
+    end
   end
 
   def show
     @post = Post.find_by(id: params[:id])
+  end
+
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    @post.title = params[:title]
+    @post.content = params[:content]
+    @post.save
+    @post.photo_name = "#{@post.id}.jpg"
+    image = params[:photo]
+    if image
+      File.binwrite("public/post_photos/#{@post.photo_name}", image.read)
+    redirect_to("/users/#{@current_user.id}")
+    else
+      @error_message = "※"
+      render("posts/edit")
+    end
+  end
+
+  def delete
+    @post = Post.find_by(id: params[:id])
+    @post.destroy
+    redirect_to("/users/#{@current_user.id}")
   end
 end

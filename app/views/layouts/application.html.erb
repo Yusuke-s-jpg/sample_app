@@ -8,25 +8,31 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
     <header>
       <div class="menu">
         <ul>
+          <div class="header-left">
             <li><%= link_to("Home", "/", {class: "link"}) %></li>
+          </div>
           <% if session[:user_id] %>
-            <li><%= session[:user_id] %></li>
+           <div class="header-right">
+             <li><%= link_to("Log Out", "/logout", {method: "post", class: "link"}) %></li>
+             <li>
+              <%= @current_user.name %> :
+              <%= link_to("My Page", "/users/#{session[:user_id]}", {class: "link"}) %>
+              </li>
 
-            <li>Blogger</li>
-            <li>Search</li>
-            <li><%= link_to("My Page", "/users/#{session[:user_id]}", {class: "link"}) %></li>
-            <li><%= link_to("Log Out", "/logout", {method: "post", class: "link"}) %></li>
+          </div>
           <% else %>
-            <li>Blogger</li>
-            <li>Search</li>
+          <div class="header-right">
+            <li><%= link_to("Sign up", "/users/new", {class: "link"}) %></li>
             <li><%= link_to("Log In", "/login", {class: "link"}) %></li>
-            <li><%= link_to("Sign Up", "/users/new", {class: "link"}) %></li>
+          </div>
           <% end %>
         </ul>
       </div>

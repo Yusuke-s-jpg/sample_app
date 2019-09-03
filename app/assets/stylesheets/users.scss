@@ -25,18 +25,22 @@
 
 .information-upper img{
   padding: 20px;
-  height: 200px;
-  width: 200px;
+  height: 240px;
+  width: 240px;
   float: left;
 }
 
 .name_email{
-  padding-top: 30px;
+  padding-top: 20px;
   float: left;
 }
 
+.show-user-edit{
+  padding: 30px 30px 0px 30px;
+}
+
 .information-upper li{
-  padding: 20px;
+  padding: 20px 20px 10px 40px;
   list-style: none;
   font-size: 20px;
 }
@@ -73,8 +77,8 @@
 }
 
 .mypage-index-left img{
-  height: 210px;
-  width: 300px;
+  height: 250px;
+  width: 340px;
   padding: 20px;
   float: left;
 }
@@ -94,8 +98,8 @@
 .submit-form{
   position: absolute;
   top: 200px;
-  left: 580px;
-  width: 300px;
+  left: 500px;
+  width: 450px;
   padding: 30px;
   font-size: 20px;
   text-align: center;
@@ -132,4 +136,8 @@
   color: #000000;
   font-size: 15px;
   padding-top: 20px;
+}
+
+.show-post-edit{
+  padding: 20px;
 }

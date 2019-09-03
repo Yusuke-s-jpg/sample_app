@@ -7,26 +7,33 @@
   background-image: url("/home_image/home.jpg");
 }
 
+.page-title{
+  position: absolute;
+  top:220px;
+  left: 250px;
+  color: #ffffff;
+  font-family: cursive;
+  font-size: 25px;
+}
+
+.page-title h1{
+  font-size: 45px;
+}
+
 .content-middle{
-  padding: 10px 30px;
-}
-
-.content-left{
-  float: left;
-  padding: 15px;
-  height: 800px;
+  position: absolute;
+  top: 550px;
+  left: 330px;
+  height: 850px;
   width: 900px;
-  border-right: 3px solid #dddddd;
 }
 
-.content-right{
-  float: left;
-  padding: 15px;
-  height: 800px;
+.content-middle h1{
+  font-family: serif;
 }
 
 .index-post-form{
-  height: 150px;
+  height: 190px;
   width: 850px;
   box-shadow: 0 3px 8px #c1ced7;
   padding: 15px;
@@ -34,8 +41,8 @@
 
 .index-left img{
   float: left;
-  height: 150px;
-  width: 200px;
+  height: 160px;
+  width: 230px;
   padding: 5px;
 }
 
@@ -53,20 +60,20 @@
 
 .index-right-top{
   padding: 5px;
-  height: 50px;
-  width: 600px;
+  height: 80px;
+  width: 550px;
 }
 
 .index-right-bottom{
   padding: 5px;
   height: 50px;
-  width: 600px;
+  width: 550px;
 }
 
 .index-right-bottom img{
   padding: 0px;
   height: 40px;
-  width: 35px;
+  width: 40px;
 }
 
 .index-right-bottom span{

@@ -1,8 +1,14 @@
 <div class="background">
 <div class="new-post-space">
+  <h1>NEW POST</h1>
   <%= form_tag("/posts/create", {multipart: true}) do %>
     <div class="new-post-form">
       <p>Photo</p>
+      <span>
+        <% if @error_message %>
+        <%= @error_message %>
+        <% end %>
+      </span>
       <input name="photo" type="file" class="cursor">
       <input name="title" placeholder="Title" class="title-form">
       <textarea name="content" placeholder="Content"></textarea>

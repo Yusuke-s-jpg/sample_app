@@ -24,6 +24,7 @@ html{
 
 body{
   height: 100%;
+  font-family: sans-serif;
 }
 
 header{
@@ -34,16 +35,21 @@ header{
   z-index: 10;
 }
 
-.menu{
-
+.header-left li{
+  float: left;
+  list-style: none;
+  font-size: 35px;
+  padding: 2px 35px;
+  font-family: sans-serif;
+  color: #ffffff;
 }
 
-.menu li{
+.header-right li{
+  float:right;
   list-style: none;
-  float: left;
-  font-size: 25px;
-  padding: 15px 35px;
-  font-family: cursive;
+  font-size: 20px;
+  padding: 15px 35px 15px 20px;
+  font-family: sans-serif;
   color: #ffffff;
 }
 

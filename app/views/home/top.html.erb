@@ -1,14 +1,17 @@
 <div class="content">
   <div class="content-image">
+    <div class="page-title">
+    <h1>Travel Hub</h1>
+    <p>-Place for every traveller-</p>
+    </div>
   </div>
   <div class="content-middle">
-    <div class="content-left">
       <h1>New Posts</h1>
       <% if @posts %>
       <% @posts.each do |post| %>
         <div class="index-post-form">
           <div class="index-left">
-            <img src="<%= "/post_photo/#{post.id}.jpg" %>">
+            <img src="<%= "/post_photos/#{post.id}.jpg" %>">
           </div>
           <div class="index-right">
             <div class="index-right-top">
@@ -20,8 +23,8 @@
               <p>
                 <%= post.created_at %>
               <span class="like-feture">
-                <%= Like.where(post_id: post.id).count %>
               <% if session[:user_id] %>
+                <%= Like.where(post_id: post.id).count %>
                 <% if Like.find_by(user_id: @current_user.id, post_id: post.id) %>
                   <%= link_to("/likes/delete/#{post.id}", {method: "post"}) do %>
                   <span class="fa fa-heart like-btn-unlike"></span>
@@ -31,7 +34,10 @@
                   <span class="fa fa-heart like-btn"></span>
                   <% end %>
                 <% end %>
-              <% end %>
+              <% else %>
+                <%= Like.where(post_id: post.id).count %>
+                <span class="fa fa-heart like-btn-unlike"></span>
+              <% end  %>
               </span>
               </p>
             </div>
@@ -41,7 +47,4 @@
       <% end %>
       <%= paginate @posts %>
     </div>
-    <div class="content-right">
-    </div>
-  </div>
 </div>

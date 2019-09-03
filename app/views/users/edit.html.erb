@@ -1,0 +1,15 @@
+<div class="background">
+<div class="submit-form">
+  <%= form_tag("/users/update/#{@user.id}", {multipart: true}) do %>
+    <div class="create-form">
+      <h1>EDIT</h1>
+      <p>Your photo</p>
+      <input name="photo" type="file" class="cursor">
+      <input name="name" value="<%= @user.name %>">
+      <br/><input name="email" value="<%= @user.email %>">
+      <br/><input name="password" placeholder="Password">
+      <br/><input type="submit" value="EDIT" class="submit-btn">
+    </div>
+  <% end %>
+</div>
+</div>

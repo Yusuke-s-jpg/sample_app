@@ -1,7 +1,7 @@
 <div class="post-show">
   <div class="post-show-image">
     <div class="post-show-photo">
-      <img src="<%= "/post_photo/#{@post.id}.jpg" %>">
+      <img src="<%= "/post_photos/#{@post.id}.jpg" %>">
     </div>
   </div>
   <div class="post-show-right">
@@ -13,6 +13,7 @@
     </div>
     <div class="post-show-profile">
     <img src="<%= "/user_images/#{@post.user.image_name}" %>">
+    <div class="post-show-profile-right">
     <span><%= @post.user.name %></span>
     <span class="show-created_at"><%= @post.created_at %></span>
     <span class="like-feture show-like-feture">
@@ -29,6 +30,7 @@
       <% end %>
     <% end %>
     </span>
+    </div>
     </div>
   </div>
 </div>
