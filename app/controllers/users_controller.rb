@@ -1,10 +1,15 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, {only: [:show, :edit]}
+  before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
+  before_action :ensure_correct_user, {only: [:edit, :update]}
+
   def show
     @user = User.find_by(id: params[:id])
     @posts = Post.where(user_id: @user.id).page(params[:page]).per(4).order(created_at: :desc)
   end
 
   def new
+    @user = User.new
   end
 
   def create
@@ -15,8 +20,11 @@ class UsersController < ApplicationController
       image_name: "defoult_image.jpg"
     )
     if @user.save
-    session[:user_id] = @user.id
-    redirect_to("/")
+     session[:user_id] = @user.id
+     flash[:notice] = "Welcome to Travel Hub"
+     redirect_to("/")
+    else
+     render("users/new")
     end
   end
 
@@ -34,6 +42,7 @@ class UsersController < ApplicationController
     image = params[:photo]
     if image
       File.binwrite("public/user_images/#{@user.image_name}", image.read)
+    flash[:notice] = "You succeeded in update"
     redirect_to("/users/#{@user.id}")
     else
       @error_message = "※"
@@ -45,16 +54,15 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @user.destroy
     session[:user_id] = nil
+    flash[:notice] = "You succeeded in delete"
     redirect_to("/")
   end
 
   def login
-    @user = User.find_by(
-      email: params[:email],
-      password: params[:password]
-    )
-    if @user
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
+      flash[:notice] = "You succeeded in login"
       redirect_to("/")
     else
       @error_message = "We couldn't search for your email or password"
@@ -66,9 +74,17 @@ class UsersController < ApplicationController
 
   def logout
     session[:user_id] = nil
+    flash[:notice] = "You succeeded in logout"
     redirect_to("/")
   end
 
   def login_form
   end
+
+  def ensure_correct_user
+   if @current_user.id != params[:id].to_i
+     flash[:notice] = "You are not authorized to access this page"
+     redirect_to("/")
+   end
+ end
 end
