@@ -1,26 +1,14 @@
-This is the comment for checking feature branch
+概要: 旅行者用ブログアプリ
 
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+機能一覧:
+ ・記事一覧、詳細表示機能
+ ・記事投稿、編集、削除機能
+ ・画像投稿、編集、削除機能
+ ・ユーザー登録機能
+ ・ログイン機能
+ ・アクセス制限機能
+ ・ページネーション機能
+ ・単体、統合テスト機能
+ ・いいね機能
+ ・パスワード暗号化機能
+ 
