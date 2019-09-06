@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'likes/create'
-  get "/" => "home#top"
+  #get "/" => "home#top"
+  root :to => 'home#top'
 
   get "posts/new" => "posts#new"
   post "posts/create" => "posts#create"
