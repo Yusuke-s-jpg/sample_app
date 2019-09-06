@@ -1,3 +1,5 @@
+This is the comment for checking feature branch
+
 # README
 
 This README would normally document whatever steps are necessary to get the
