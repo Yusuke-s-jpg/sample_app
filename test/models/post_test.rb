@@ -5,7 +5,7 @@ class PostTest < ActiveSupport::TestCase
      @post = Post.new(
        title:"example",
        content:"content",
-       user_id:"example"
+       user_id: 1
      )
    end
 
