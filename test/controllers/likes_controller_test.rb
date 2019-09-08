@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class LikesControllerTest < ActionDispatch::IntegrationTest
-  #test "should get create" do
-  #  get likes_create_url
-  #  assert_response :success
-  #end
+
+   test "valid create like" do
+     #assert_difference('Like.count', +1) do
+     #   post likes_create_path(:user_id => 1, :post_id => 1)
+     #end
+     #assert_redirect_to root_path
+   end
 
 end
